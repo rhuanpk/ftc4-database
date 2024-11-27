@@ -10,9 +10,3 @@ variable "db_password" {
   sensitive   = true
   default     = "admin123"
 }
-
-variable "db_name" {
-  description = "Nome do banco de dados"
-  type        = string
-  default     = "db"
-}
