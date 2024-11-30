@@ -93,7 +93,6 @@ locals {
   mongodb_atlas_org_id                 = "65f23cc56dd714486d541a44"
   mongodb_atlas_database_username      = "root"
   mongodb_atlas_database_user_password = "root"
-  mongodb_atlas_accesslistip           = "0.0.0.0/0"
 }
 terraform {
   required_providers {
@@ -136,6 +135,6 @@ resource "mongodbatlas_database_user" "my_user" {
 
 resource "mongodbatlas_project_ip_access_list" "my_ipaddress" {
   project_id = mongodbatlas_project.my_project.id
-  ip_address = local.mongodb_atlas_accesslistip
-  comment    = "My IP Address"
+  cidr_block = "0.0.0.0/0" 
+  comment    = "Allow global access"
 }
