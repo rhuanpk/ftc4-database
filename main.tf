@@ -93,7 +93,7 @@ locals {
   mongodb_atlas_org_id                 = "65f23cc56dd714486d541a44"
   mongodb_atlas_database_username      = "root"
   mongodb_atlas_database_user_password = "root"
-  mongodb_atlas_accesslistip           = "0.0.0.0"
+  mongodb_atlas_accesslistip           = "0.0.0.0/0"
 }
 terraform {
   required_providers {
