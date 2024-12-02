@@ -13,13 +13,8 @@ data "aws_subnets" "default_subnets" {
   }
 }
 
-data "aws_db_subnet_group" "rds_db_subnet_group" {
-  name = "rds-db-subnet-group"
-}
-
 resource "aws_db_subnet_group" "rds_db_subnet_group" {
-  count  = data.aws_db_subnet_group.rds_db_subnet_group.id == null ? 1 : 0
-  name   = "rds-db-subnet-group"
+  name       = "rds-db-subnet-group"
   subnet_ids = slice(data.aws_subnets.default_subnets.ids, 0, 2)
 
   tags = {
@@ -31,10 +26,6 @@ resource "aws_security_group" "rds_mysql_sg" {
   vpc_id      = data.aws_vpc.default.id
   name        = "rds-mysql-sg"
   description = "Grupo de seguranca para RDS MySQL"
-
-  lifecycle {
-    create_before_destroy = true
-  }
 
   ingress {
     from_port   = 3306
@@ -50,7 +41,6 @@ resource "aws_security_group" "rds_mysql_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 resource "aws_db_instance" "product" {
   identifier             = "mysql-ftc4-product"
   engine                 = "mysql"
