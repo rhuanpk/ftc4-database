@@ -32,6 +32,10 @@ resource "aws_security_group" "rds_mysql_sg" {
   name        = "rds-mysql-sg"
   description = "Grupo de seguranca para RDS MySQL"
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
   ingress {
     from_port   = 3306
     to_port     = 3306
@@ -46,6 +50,7 @@ resource "aws_security_group" "rds_mysql_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
 resource "aws_db_instance" "product" {
   identifier             = "mysql-ftc4-product"
   engine                 = "mysql"
