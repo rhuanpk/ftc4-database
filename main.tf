@@ -13,13 +13,8 @@ data "aws_subnets" "default_subnets" {
   }
 }
 
-data "aws_db_subnet_group" "rds_db_subnet_group" {
-  name = "rds-db-subnet-group"
-}
-
 resource "aws_db_subnet_group" "rds_db_subnet_group" {
-  count  = data.aws_db_subnet_group.rds_db_subnet_group.id == null ? 1 : 0
-  name   = "rds-db-subnet-group"
+  name       = "rds-db-subnet-group"
   subnet_ids = slice(data.aws_subnets.default_subnets.ids, 0, 2)
 
   tags = {
