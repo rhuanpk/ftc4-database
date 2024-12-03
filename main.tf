@@ -88,9 +88,9 @@ resource "aws_db_instance" "payment" {
   db_subnet_group_name   = aws_db_subnet_group.rds_db_subnet_group.name
 }
 locals {
-  mongodb_atlas_api_pub_key            = "rmxsviid"
-  mongodb_atlas_api_pri_key            = "e7fead49-8ea9-4120-afe1-d0b08bf1d7d1"
-  mongodb_atlas_org_id                 = "65f23cc56dd714486d541a44"
+  mongodb_atlas_api_pub_key            = "hytgjosm"
+  mongodb_atlas_api_pri_key            = "f05ca9ce-c7ec-424c-8e27-7969d2398c7d"
+  mongodb_atlas_org_id                 = "674e512d16f28410c4db7124"
   mongodb_atlas_database_username      = "root"
   mongodb_atlas_database_user_password = "root"
   mongodb_atlas_accesslistip           = "0.0.0.0"
