@@ -1,14 +1,12 @@
 ![Logo](https://avatars.githubusercontent.com/u/79948663?s=200&v=4)
 
-![Image](https://drive.google.com/file/d/10Rrs_tnpJ7kEE6-QGe7lWuGOyh-6f0gU/)
-
 # Tech Challenge - FIAP TECH 2024
 
 Este repositório contém o código fonte da infraestrutura em Terraform do banco de dados desenvolvida para o projeto do Tech Challenge referente a pós-graduação da FIAP TECH no ano de 2024:
 
 ## Stack utilizada
 
-**Infra:** Terraform e AWS Cloud (RDS)
+**Infra:** Terraform, AWS Cloud (RDS) e MongoDb Atlas.
 
 ## Rodando localmente
 
@@ -21,7 +19,7 @@ Clone o projeto:
 Entre no diretório do projeto:
 
 ```bash
-  cd ftc3-terra-db
+  cd ftc4-database
 ```
 
 Instale as dependências e módulos do diretório com o Terraform:
