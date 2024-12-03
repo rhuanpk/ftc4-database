@@ -135,6 +135,6 @@ resource "mongodbatlas_database_user" "my_user" {
 
 resource "mongodbatlas_project_ip_access_list" "my_ipaddress" {
   project_id = mongodbatlas_project.my_project.id
-  cidr_block = "0.0.0.0/0" 
+  cidr_block = "0.0.0.0/0"
   comment    = "Allow global access"
 }
